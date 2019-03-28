@@ -17,7 +17,7 @@ class Student
       FROM students
       SQL
 
-    found = DB[:conn].execute(sql, name)
+    found = DB[:conn].execute(sql)
     binding.pry
 
     found
