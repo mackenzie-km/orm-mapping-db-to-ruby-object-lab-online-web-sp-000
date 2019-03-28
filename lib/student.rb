@@ -16,12 +16,13 @@ class Student
 
   def self.find_by_name(name)
     sql = <<-SQL
-      SELECT *
+      SELECT id, name, grade
       FROM students
       WHERE name = ?
       SQL
 
-    DB[:conn].execute(sql, name)
+    found = DB[:conn].execute(sql, name)
+    self.new_from_db(found)
   end
 
   def save
