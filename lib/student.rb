@@ -38,6 +38,20 @@ class Student
    end
   end
 
+  def self.students_below_12th_grade
+    sql = <<-SQL
+     SELECT id, name, grade
+     FROM students
+     WHERE grade = 9
+     SQL
+
+   found = DB[:conn].execute(sql)
+
+   found.map do |student|
+     self.new_from_db(student)
+   end
+  end
+
   def self.find_by_name(name)
     sql = <<-SQL
       SELECT id, name, grade
