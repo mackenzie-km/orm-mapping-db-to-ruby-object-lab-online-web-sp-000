@@ -18,7 +18,11 @@ class Student
       SQL
 
     found = DB[:conn].execute(sql)
-    binding.pry
+
+    found.map do |student|
+      self.new_from_db(student)
+    end 
+  
 
     found
 
