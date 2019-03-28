@@ -75,9 +75,9 @@ class Student
      LIMIT 1
      SQL
 
-   found = DB[:conn].execute(sql)[0]
+   found = DB[:conn].execute(sql)
 
-   found.map do |student|
+   found[0].map do |student|
      self.new_from_db(student)
    end
   end
