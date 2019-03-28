@@ -22,8 +22,9 @@ class Student
       SQL
 
     found = DB[:conn].execute(sql, name)
-    binding.pry
+
     self.new_from_db(found)
+    binding.pry
   end
 
   def save
