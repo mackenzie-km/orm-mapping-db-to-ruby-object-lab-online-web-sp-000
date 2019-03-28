@@ -79,7 +79,7 @@ class Student
 #binding.pry
    found.map do |student|
      self.new_from_db(student)
-   end
+   end.first
   end
 
   def self.all_students_in_grade_X(grade)
@@ -93,7 +93,7 @@ class Student
 
    found.map do |student|
      self.new_from_db(student)
-   end.first
+   end
   end
 
   def self.find_by_name(name)
