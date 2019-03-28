@@ -21,7 +21,7 @@ class Student
 
     found.map do |student|
       self.new_from_db(student)
-    end 
+    end
   
 
     found
