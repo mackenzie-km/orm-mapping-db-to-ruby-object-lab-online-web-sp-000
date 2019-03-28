@@ -22,7 +22,12 @@ class Student
       SQL
 
     found = DB[:conn].execute(sql, name)
-    self.new_from_db(found)
+
+    p_id = found[0]
+    p_name = found[1]
+    p_grade = found[2]
+    
+    self.new_from_db(p_id, p_name, p_grade)
   end
 
   def save
