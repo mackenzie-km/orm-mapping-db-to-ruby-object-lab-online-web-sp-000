@@ -78,7 +78,7 @@ class Student
    found = DB[:conn].execute(sql)
 
    found.map do |student|
-     self.new_from_db(student)
+     self.new_from_db(student[0])
    end
   end
 
