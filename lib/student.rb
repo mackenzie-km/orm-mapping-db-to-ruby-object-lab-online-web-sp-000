@@ -20,9 +20,7 @@ class Student
     found = DB[:conn].execute(sql, name)
     found
     binding.pry
-    found.map do |entry|
-      self.new_from_db
-    end
+    
   end
 
   def self.find_by_name(name)
